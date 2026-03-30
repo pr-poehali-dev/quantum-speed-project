@@ -32,7 +32,7 @@ export function Navbar() {
       <div
         className={cn(
           "max-w-7xl mx-auto rounded-full transition-all duration-300 flex items-center justify-between px-6 py-3",
-          "glass bg-black/40"
+          isScrolled ? "glass bg-black/40" : "bg-transparent"
         )}
       >
         <a href="/" className="text-2xl font-bold tracking-tighter relative z-50">
