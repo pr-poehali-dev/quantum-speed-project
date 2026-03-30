@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { ArrowRight } from 'lucide-react'
+import Icon from "@/components/ui/icon"
 
 export function Hero() {
   return (
@@ -23,7 +23,7 @@ export function Hero() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
             </span>
             <span className="text-xs font-medium text-white/80 uppercase tracking-wider">
-              Открыты для новых проектов
+              18 лет на рынке · более 8 000 сделок
             </span>
           </div>
         </motion.div>
@@ -34,9 +34,9 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="text-5xl md:text-7xl lg:text-9xl font-bold tracking-tighter mb-8 text-gradient"
         >
-          Цифровая
+          Недвижимость
           <br />
-          Алхимия
+          без рисков
         </motion.h1>
 
         <motion.p
@@ -45,8 +45,8 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-12 leading-relaxed"
         >
-          Мы превращаем сложные идеи в интуитивные цифровые продукты.
-          Объединяем искусство, технологии и стратегию для создания будущего.
+          Татьяна — эксперт по недвижимости по всей России. Помогу продать дорого, купить без переплат
+          и сдать жильё надёжным арендаторам.
         </motion.p>
 
         <motion.div
@@ -55,15 +55,39 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <button className="group relative px-8 py-4 bg-white text-black rounded-full font-semibold text-lg overflow-hidden transition-all hover:scale-105">
-            <span className="relative z-10 flex items-center gap-2">
-              Наши работы <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </span>
+          <a
+            href="tel:+79130071870"
+            className="group relative px-8 py-4 bg-white text-black rounded-full font-semibold text-lg overflow-hidden transition-all hover:scale-105 flex items-center gap-2"
+          >
+            <Icon name="Phone" size={18} />
+            <span>+7 913 007-18-70</span>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-white opacity-0 group-hover:opacity-100 transition-opacity" />
-          </button>
-          <button className="px-8 py-4 glass rounded-full font-semibold text-lg text-white hover:bg-white/10 transition-all hover:scale-105">
-            Связаться с нами
-          </button>
+          </a>
+          <a
+            href="#services"
+            className="px-8 py-4 glass rounded-full font-semibold text-lg text-white hover:bg-white/10 transition-all hover:scale-105"
+          >
+            Наши услуги
+          </a>
+        </motion.div>
+
+        {/* Stats */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+          className="mt-20 flex flex-wrap justify-center gap-12"
+        >
+          {[
+            { value: "18 лет", label: "опыта на рынке" },
+            { value: "8 000+", label: "успешных сделок" },
+            { value: "Вся Россия", label: "география работы" },
+          ].map((stat, i) => (
+            <div key={i} className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-gradient">{stat.value}</div>
+              <div className="text-sm text-white/50 mt-1">{stat.label}</div>
+            </div>
+          ))}
         </motion.div>
       </div>
 

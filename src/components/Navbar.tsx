@@ -13,9 +13,9 @@ export function Navbar() {
   })
 
   const navLinks = [
-    { name: "Проекты", href: "#work" },
     { name: "Услуги", href: "#services" },
-    { name: "О нас", href: "#about" },
+    { name: "Сделки", href: "#work" },
+    { name: "О Татьяне", href: "#about" },
     { name: "Контакты", href: "#contact" },
   ]
 
@@ -36,7 +36,7 @@ export function Navbar() {
         )}
       >
         <a href="/" className="text-2xl font-bold tracking-tighter relative z-50">
-          Призма<span className="text-blue-400">.</span>
+          Багира<span className="text-blue-400">.</span>
         </a>
 
         {/* Desktop Menu */}
@@ -50,9 +50,9 @@ export function Navbar() {
               {link.name}
             </a>
           ))}
-          <button className="bg-white text-black px-5 py-2 rounded-full text-sm font-semibold hover:bg-white/90 transition-colors">
-            Обсудить проект
-          </button>
+          <a href="tel:+79130071870" className="bg-white text-black px-5 py-2 rounded-full text-sm font-semibold hover:bg-white/90 transition-colors">
+            Позвонить
+          </a>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -82,9 +82,9 @@ export function Navbar() {
                   {link.name}
                 </a>
               ))}
-              <button className="mt-4 bg-white text-black px-8 py-3 rounded-full text-lg font-semibold">
-                Обсудить проект
-              </button>
+              <a href="tel:+79130071870" className="mt-4 bg-white text-black px-8 py-3 rounded-full text-lg font-semibold">
+                Позвонить
+              </a>
             </div>
           </motion.div>
         )}

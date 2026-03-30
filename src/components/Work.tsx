@@ -1,49 +1,56 @@
 import { GlassCard } from "@/components/ui/glass-card"
 import { motion } from "framer-motion"
 
-const projects = [
+const cases = [
   {
-    title: "НеоБанк",
-    category: "Финтех приложение",
+    title: "Продажа за 3 недели",
+    category: "Продажа квартиры · Москва",
     image: "https://cdn.poehali.dev/templates/liquid-glass-agency/neon-finance-app-interface-dark-mode.jpg",
     color: "from-blue-500/20 to-cyan-500/20",
-    description: "Переосмысление пользовательского опыта через интуитивный дизайн и плавные взаимодействия.",
-    tags: ["UX/UI", "Разработка"],
+    description: "Клиент обратился с двухкомнатной квартирой, которая стояла на рынке полгода без результата. Переоценили объект, подготовили к показам и нашли покупателя за 3 недели — на 8% дороже прежней цены.",
+    tags: ["Продажа", "Переговоры"],
   },
   {
-    title: "Гармония",
-    category: "Велнес платформа",
+    title: "Аренда без простоя",
+    category: "Аренда жилья · Новосибирск",
     image: "https://cdn.poehali.dev/templates/liquid-glass-agency/meditation-app-interface-soft-gradients.jpg",
     color: "from-purple-500/20 to-pink-500/20",
-    description: "Приложение для медитации с мягкими градиентами и умиротворяющим интерфейсом.",
-    tags: ["Брендинг", "UX/UI"],
+    description: "Собственник хотел надёжных жильцов и стабильный доход. Тщательно проверили потенциальных арендаторов, составили грамотный договор. Квартира сдана без единого дня простоя уже 2 года подряд.",
+    tags: ["Аренда", "Проверка жильцов"],
   },
   {
-    title: "Орбита",
-    category: "Аэрокосмический сайт",
+    title: "Покупка без рисков",
+    category: "Покупка недвижимости · Сочи",
     image: "https://cdn.poehali.dev/templates/liquid-glass-agency/space-website-interface-futuristic.jpg",
     color: "from-orange-500/20 to-red-500/20",
-    description: "Футуристичный веб-сайт для космической компании с эффектом погружения.",
-    tags: ["Веб-дизайн", "Разработка"],
+    description: "Семья хотела купить квартиру у моря, но боялась мошенников. Проверили юридическую чистоту 7 объектов, нашли идеальный вариант и сэкономили 600 000 рублей в ходе переговоров.",
+    tags: ["Покупка", "Юридическая проверка"],
   },
 ]
 
 export function Work() {
   return (
     <section id="work" className="py-32 relative overflow-hidden">
-      {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] bg-blue-900/10 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <div>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-sm font-medium text-white/50 uppercase tracking-widest mb-4"
+            >
+              Реальные истории
+            </motion.p>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-4xl md:text-6xl font-bold mb-6"
             >
-              Избранные работы
+              Истории успеха
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -52,21 +59,22 @@ export function Work() {
               transition={{ delay: 0.1 }}
               className="text-xl text-white/60 max-w-md"
             >
-              Подборка наших последних цифровых трансформаций.
+              Каждая сделка — это доверие клиента и результат, который говорит сам за себя.
             </motion.p>
           </div>
-          <motion.button
+          <motion.a
+            href="tel:+79130071870"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="px-6 py-3 rounded-full border border-white/20 hover:bg-white/10 transition-colors text-sm font-medium"
+            className="px-6 py-3 rounded-full border border-white/20 hover:bg-white/10 transition-colors text-sm font-medium whitespace-nowrap"
           >
-            Все проекты
-          </motion.button>
+            Обсудить вашу ситуацию
+          </motion.a>
         </div>
 
         <div className="space-y-20">
-          {projects.map((project, index) => (
+          {cases.map((item, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 40 }}
@@ -77,19 +85,19 @@ export function Work() {
               <GlassCard className="p-0 overflow-hidden group">
                 <div className="grid md:grid-cols-2 gap-0">
                   <div className={`p-12 flex flex-col justify-center relative overflow-hidden`}>
-                    <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
+                    <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
                     <div className="relative z-10">
                       <span className="text-sm font-medium text-white/50 mb-4 block uppercase tracking-wider">
-                        {project.category}
+                        {item.category}
                       </span>
                       <h3 className="text-4xl md:text-5xl font-bold mb-6 group-hover:translate-x-2 transition-transform duration-500">
-                        {project.title}
+                        {item.title}
                       </h3>
                       <p className="text-white/70 mb-8 max-w-md">
-                        {project.description}
+                        {item.description}
                       </p>
                       <div className="flex items-center gap-4 text-sm font-medium">
-                        {project.tags.map((tag, tagIndex) => (
+                        {item.tags.map((tag, tagIndex) => (
                           <span key={tagIndex} className="px-4 py-2 rounded-full bg-white/5 border border-white/10">
                             {tag}
                           </span>
@@ -99,8 +107,8 @@ export function Work() {
                   </div>
                   <div className="relative h-[400px] md:h-auto overflow-hidden">
                     <img
-                      src={project.image}
-                      alt={project.title}
+                      src={item.image}
+                      alt={item.title}
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
