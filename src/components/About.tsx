@@ -23,25 +23,30 @@ export function About() {
       <div className="absolute top-1/2 right-0 w-[50vw] h-[50vw] bg-purple-900/15 rounded-full blur-[150px] pointer-events-none -translate-y-1/2" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <motion.p
+        {/* Logo + заголовок */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-sm font-medium text-white/50 uppercase tracking-widest mb-4"
+          className="flex flex-col md:flex-row md:items-center gap-8 mb-16"
         >
-          О нас
-        </motion.p>
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.05 }}
-          className="text-4xl md:text-6xl font-bold mb-16"
-        >
-          Агентство недвижимости
-          <br />
-          <span className="text-gradient">Багира</span>
-        </motion.h2>
+          <div className="relative shrink-0">
+            <div className="absolute inset-0 bg-purple-500/20 rounded-3xl blur-2xl scale-110" />
+            <img
+              src="https://cdn.poehali.dev/projects/94e0e3b7-bf50-4093-946a-fc087a0e7bbd/bucket/3e13ac6c-8e2e-4a06-b666-012bdd0372cc.png"
+              alt="Логотип АН Багира"
+              className="relative z-10 w-48 md:w-60 drop-shadow-2xl"
+            />
+          </div>
+          <div>
+            <p className="text-sm font-medium text-white/50 uppercase tracking-widest mb-3">О нас</p>
+            <h2 className="text-4xl md:text-6xl font-bold">
+              Агентство недвижимости
+              <br />
+              <span className="text-gradient">Багира</span>
+            </h2>
+          </div>
+        </motion.div>
 
         {/* Main card with photo */}
         <motion.div
